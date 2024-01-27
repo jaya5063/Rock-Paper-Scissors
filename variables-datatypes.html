@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variables</title>
+</head>
+
+<body>
+    <h3>your cart</h3>
+    <button onclick="
+    console.log(`items = ${items}`);
+    ">cart items</button>
+    <button onclick="
+    // items = items+1
+    items++
+    console.log(`items = ${items}`)
+    ">add to cart</button>
+    <button onclick="items--
+    console.log(`items = ${items}`)
+    ">Remove from cart</button>
+    <button onclick="
+    items += 2
+    console.log(`items = ${items}`);
+    ">+2</button>
+    <button onclick="
+    items -= 2
+    console.log(`items = ${items}`);
+    ">-2</button>
+    <button onclick="
+    items +=3
+    console.log(`items = ${items}`);">+3</button>
+    <button onclick="
+    items -=3
+    console.log(`items = ${items}`);">-3</button>
+    <button onclick="
+    items = 0
+    console.log('cart reset');
+    console.log(`items = ${items}`);">reset</button>
+
+    <!-- there are 3 types to declare variable
+    1.with const used when value is fixed
+    2.let used when value in variable can be changable
+    3. with using var it is an old method to declare -->
+    <script>
+        let items = 0;
+
+        name = 'jaya';
+        console.log(`My name is ${name}`);
+        cost = 5 + (2*3) + 9;
+        console.log(`Cost of Food is $${cost}`)
+        tax = cost*0.1;
+        console.log(`Tax is $${tax}`);
+        totalCost = cost + tax;
+        console.log(`Total Cost is $${totalCost}`);
+    </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        // Objects Creation
+        const details = {
+            name : 'jaya',
+            sno : 66 ,
+            place : 'TDP'
+        }
+        console.log(details); //to display ttotal object
+        console.log(details.name);//to diplay specific key
+
+        details.name = 'krishna';//used to replace the keys
+        console.log(details);
+
+        details.height = '6 feet';//to add new key
+        console.log(details);
+        delete details.height //to delete key
+        console.log(details);
+        console.log(details['name']);//[] has same use as dot but it is used where dot property doesn't work like when we operators in names
+
+        const product={
+            name : 'shirt',
+            size : 'XL',
+            rating:{// nested objects
+                stars : 4.7,
+                conunt : 76
+            },
+            obj :function fun1(){
+                console.log('function inside object');
+            }
+        };
+        console.log(product.rating.conunt)//to call nested objects
+        product.obj();
+        console.log(typeof console)
+        //object + function = method
+        //JSON = Javascript Object Notation
+        // it has the simillar syntax like javascript but with less features
+        // it not support single quotes and functions
+        // it can be understandable by almost all languages
+    </script>
+</body>
+</html>

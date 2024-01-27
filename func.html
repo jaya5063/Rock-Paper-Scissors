@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // creating and calling the function
+        function greet(name){
+
+            if(!name){ // if the parameter is not given
+                console.log('hi there');
+            }else{    
+                console.log(`Hello everyone! This is ${name}`);
+            }
+        }
+        greet();// calling the function...
+        greet('jaya'); //calling th function the parameter..
+
+        function convertToFahrenheit(celcius){
+            fahrenheit = (celcius*9/5)+32;
+            console.log(fahrenheit);
+        }
+        convertToFahrenheit(25);
+        
+    </script>
+</body>
+</html>

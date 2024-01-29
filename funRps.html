@@ -11,23 +11,25 @@
     <h2>Rock Paper Scissor</h2>
     <p>
         <button onclick="
-            // pickCmove();
             playGame('Rock');
             ">Rock</button>
         <button onclick="
-            // pickCmove();
             playGame('Paper');
             ">Paper</button>
         <button onclick="
-            // pickCmove();
             playGame('Scissor');
-        ">scissor</button>
+        ">Scissor</button>
+        <p class="js-result"></p>
+        <p class="js-choices"></p>
+        <p class="js-score"></p>
+
         <button onclick="
-        score.wins = 0,
-        score.losses = 0,
-        score.ties = 0
+        score.wins=0;
+        score.loses=0;
+        score.ties=0;
         localStorage.removeItem('score');
-        console.log(score);
+        console.log(score)
+        updateScore();
         ">Reset Score</button>
     </p>
 

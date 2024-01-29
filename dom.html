@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h3>learning DOM</h3>
+    <p>DOM means Document Object Model is used to change the elements present the live server </p>
+    <button>first</button>
+    <button class="js-button">second</button>
+    <p>document.body represents elements present in the webpage <br> .innerHTML represents text present in the elements <br>
+    when we have multiple same buttons then mention the class and access the class using the .querySelector() 
+    </p>
+    <script>
+        //document.body.innerHTML = '<button>good job!</button>' // creates the button by replacing the html.
+        //console.log(document.querySelector('h3'));
+        //document.querySelector('h3').innerHTML = 'hey'
+        document.querySelector('.js-button').innerHTML= 'changed';//this line will change the text only in second button
+        console.log(document.querySelector('.js-button'));
+        // we can save the DOM objects in a variable
+        const buttonElement = document.querySelector('.js-button');
+        console.log(buttonElement)
+    </script>
+</body>
+
+</html>

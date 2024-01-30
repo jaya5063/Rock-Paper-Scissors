@@ -29,6 +29,11 @@
     <h3 class="heading-1">YouTube Subscribe Button</h3>
     <button onclick="subscription();
     " class="js-subscribe"> Subscribe</button>
+
+    <!-- <h3>Amazon Shipping Calculator</h3>
+    <input placeholder="Cost of order" class="js-inputCost">
+    <button onclick="calculateTotal();">Calculate</button>
+    <p class="js-totaCost"></p> -->
     <script>
         function subscription() {
             const buttonElement = document.querySelector('button');
@@ -38,6 +43,17 @@
                 buttonElement.innerText = 'Subscribe'
             }
         }
+
+        // function calculateTotal(){
+        //     const itemCost = document.querySelector('.js-inputCost');
+        //     const cost = itemCost.value;
+        //     if(cost <= 40){
+        //         cost = cost + 10;   
+        //     }
+        //     document.querySelector('.js-totalCost')
+        //         .innerHTML = `$${cost}`;
+        // }
+
     </script>
 </body>
 

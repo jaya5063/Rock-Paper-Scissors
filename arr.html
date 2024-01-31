@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays</title>
+    <title>toDolist</title>
 </head>
+
 <body>
-    
+    <h3>To-DO-List</h3>
+    <input placeholder="Enter the Task" class="js-task">
+    <button onclick="addTask(); onkeydown">ADD</button>
+    <p class="toDolist"></p>
+    <script>
+        // let taskslist = [];
+        // function addTask() {
+        //     let innerTask = document.querySelector('.js-task');
+        //     let Task = innerTask.value;
+        //     console.log(Task)
+        //     taskslist.push(Task);
+        //     document.querySelector('.toDolist')
+        //         .innerHTML = `${taskslist}`;
+        // }
+
+        //map function is used create new array from the existing array
+        let arr = [10,20,23,65]
+        let newrr = arr.map((value,index,arr)=>{
+            return value*value
+        })
+        console.log(newrr)
+        //array filter it is used to filter the exixting array using certain conditions
+        let greaterThanTen = (e)=>{
+            if(e>10){
+                return true
+            }
+            return false
+        }
+        newarr = arr.filter(greaterThanTen)
+        console.log(newarr)
+        //reduse to return a single value from a single array
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">Hacking</div> <!-- add a closing tag -->
+    <script>
+        let text = ["Initializing Hacking...",
+            "Reading your files...",
+            "Password files detected...",
+            "Personal Photos Detected...",
+            "Coping all the files...",
+            "Erasing the files...",
+            "You are exposed"]
+
+        const fixedDelay = 2000; // use a fixed delay of 2 seconds
+
+        const addItem = async (item)=>{
+            await new Promise((resolve, reject) => {
+                setTimeout(()=>{
+                    resolve();
+                },fixedDelay); // use the fixed delay
+            })
+            let div = document.createElement("div");
+            div.innerHTML = item;
+            document.body.append(div)
+            return Promise.resolve(); // return a promise
+        }
+
+        (async () => { // use an async function to use await in the loop
+          for (let item of text) { // use let instead of const
+              await addItem(item); // use await to wait for each promise
+          }
+        })(); // invoke the async function
+    </script>
+
+</body>
+
+</html>

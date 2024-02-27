@@ -4,41 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>toDolist</title>
+    <title>Arrays</title>
 </head>
 
 <body>
-    <h3>To-DO-List</h3>
-    <input placeholder="Enter the Task" class="js-task">
-    <button onclick="addTask(); onkeydown">ADD</button>
-    <p class="toDolist"></p>
-    <script>
-        // let taskslist = [];
-        // function addTask() {
-        //     let innerTask = document.querySelector('.js-task');
-        //     let Task = innerTask.value;
-        //     console.log(Task)
-        //     taskslist.push(Task);
-        //     document.querySelector('.toDolist')
-        //         .innerHTML = `${taskslist}`;
-        // }
-
+    <!-- <script>
         //map function is used create new array from the existing array
-        let arr = [10,20,23,65]
-        let newrr = arr.map((value,index,arr)=>{
-            return value*value
-        })
-        console.log(newrr)
+        let arr = [10, 20, 23, 65]
+
+        function square(x) {
+            return x * x
+        }
+
+        console.log(arr.map(square));
+
         //array filter it is used to filter the exixting array using certain conditions
-        let greaterThanTen = (e)=>{
-            if(e>10){
-                return true
-            }
-            return false
+        let greaterThanTen = (e) => {
+            return e > 10
         }
         newarr = arr.filter(greaterThanTen)
         console.log(newarr)
-        //reduse to return a single value from a single array
+        // reduse to return a single value from a single array
+
+        const output = arr.reduce(function (max, curr) {
+            if (curr > max) {
+                max = curr
+            }
+            return max
+        }, 0)
+
+        console.log(output)
+        const user = [
+            { firstname: "Mohammad", lastname: "Noushad", age: 22 },
+            { firstname: "Aniket", lastname: "Bhalla", age: 45 },
+            { firstname: "Bidhi", lastname: "Chand", age: 22 },
+            { firstname: "Saif", lastname: "Siddiqi", age: 67 },
+        ];
+
+        const output1 = user.reduce(function (acc,curr){
+            if(acc[curr.age]){
+                acc[curr.age]= ++acc[curr.age]
+            }else{
+                acc[curr.age]=1;
+            }
+            return acc
+        })
+        console.log(output1)
+        
+        const output2 = user.filter((x)=> x.age <30).map((x)=>x.firstname)
+        console.log(output2)
+        
+        const output3 = user.reduce(function(acc,curr){
+            if(curr.age<30){
+                 acc.push(curr.firstname);
+            }
+            return acc   
+        },[])
+
+        console.log(output3)
+
+    </script> -->
+
+    <script>
+        //Spread operator
+        let numbers = [14, 16, 74, 23, 67]
+
+        console.log(numbers)
+        console.log(...numbers)
+        //Spread operator(...) is used to unpack the elements present in thr arrar or the string
+        let max = Math.max(...numbers)
+        console.log(max);
+
+        let name = "Developer"
+        console.log(name) //Developer
+
+        console.log(...name)//D e v e l o p e r
+        console.log([...name].join("-"));
+
+        let fruits = ['apple', 'banana', 'orange', 'Kiwi']
+        console.log(...fruits)
+
+        let obj = {
+            name: 'jaya',
+            num: 66,
+            role: 'Developer'
+        }
+        //console.log(...obj)//It rises an error because object is not an iterable..
+        try {
+            console.log(...obj)
+        } catch (error) {
+            console.error(error)
+        }
+
+        //Rest Operator
+        function sum(...marks) {
+            let result = 0;
+            for (num of marks) {
+                result += num;
+            }
+            console.log(result)
+        }
+        sum(1, 4, 6)
+
+        let str1 = 'jai'
+        let str2 = 'shree'
+        let str3 = 'ram'
+        function chant(...ram) {//rest opeartor is uesd as parameter
+            console.log(...ram)//spread operator used for arrays
+        }
+        chant(str1, str2, str3)
     </script>
 </body>
 

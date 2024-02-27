@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>To-DO-List</h3>
+    <input placeholder="Enter the Task" class="js-task">
+    <button onclick="addTask(); onkeydown">ADD</button>
+    <!-- <p class="toDolist"></p> -->
+    <div class="js-tasks"></div>
+    <script>
+        let taskslist = [];
+        // let html;
+
+        function updatedList(){
+            let toDolisthtml = '';
+        }
+        function addTask() {
+            let toDolisthtml = '';
+            let innerTask = document.querySelector('.js-task');
+            let Task = innerTask.value;
+            console.log(Task)
+            taskslist.push(Task);
+            for (let i = 0; i < taskslist.length; i++) {
+                let html = `<p>${taskslist[i]} <button onclick = "
+                    taskslist.pop(${i})
+                    updatedList();"
+                    >Delete</button></p>`;
+                console.log(html);
+                toDolisthtml += html;
+            }
+            document.querySelector('.js-tasks').innerHTML = toDolisthtml;
+            
+        }
+    </script>
+</body>
+</html>

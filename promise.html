@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+
+<body>
+    <!-- <script>
+        // createOrder();
+        // proceedPayment();
+        // showOrderSummary();
+        // updateWallet();
+
+        let cart = ['pant', 'shirt', 'short']
+
+        createOrder(cart)
+            .then(function (orderId) {
+                console.log(orderId);
+                return proceedPayment(orderId);
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
+            .then(function (payment) {
+                console.log(payment);
+                return showOrderSummary()
+            }).then(function (list) {
+                console.log(list)
+                return updateWallet()
+            }).then(function (wallet) {
+                console.log(wallet)
+            })
+
+        function validateCart(cart) {
+            return true
+        }
+        function createOrder(cart) {
+            let prom1 = new Promise((resolve, reject) => {
+                setInterval(() => {
+                    let orderId = 1234;
+                    if (validateCart(cart)) {
+                        resolve('order created');
+                    } else {
+                        reject("cart is empty")
+                    }
+                }, 3000)
+            })
+            return prom1
+        }
+
+        function proceedPayment() {
+            return new Promise((resolve, reject) => {
+                setInterval(() => {
+                    resolve("payment successful")
+                    reject('payment rejected')
+                }, 3000)
+            })
+        }
+
+        function showOrderSummary() {
+            return new Promise((resolve, reject) => {
+                setInterval(() => {
+                    resolve(cart)
+                }, 3000)
+            })
+        }
+
+        function updateWallet() {
+            return new Promise((resolve, reject) => {
+                setInterval(() => {
+                    resolve("wallet updated")
+                }, 3000)
+            })
+        }
+    </script> -->
+    <script>
+        let p1 = new Promise((resolve,reject) => {
+            setTimeout(() => { resolve("p1 success") }, 5000)
+        })
+        let p2 = new Promise((resolve,reject) => {
+            // setTimeout(() => { resolve("p2 success")},2000)
+            setTimeout(() => {reject("p2 success") }, 4000)
+        })
+        let p3 = new Promise((resolve,reject) => {
+            setTimeout(() => {resolve("p3 success")},3000)
+        })
+
+        Promise.all([p1,p2,p3])
+            .then((result) => { console.log(result) })
+            .catch((err) => { console.error(err); })
+
+        Promise.allSettled([p1,p2,p3])
+            .then((res) => {console.log(res)})
+
+        Promise.race([p1,p2,p3])
+            .then((res) => {console.log(res)})
+            .catch((err) => {console.error(err)})
+
+        Promise.any([p1,p2,p3])
+            .then((res) => { console.log(res) })
+    </script>
+</body>
+
+</html>

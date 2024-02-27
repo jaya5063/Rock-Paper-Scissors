@@ -7,6 +7,7 @@
 </head>
 <body>
     <script>
+        /*
         // creating and calling the function
         function greet(name){
 
@@ -28,7 +29,60 @@
         //arrow function
         let arr = ()=>console.log('arrow function')
 
-        arr()
+        arr()*/
+
+    // functions are values it can be saved in variables
+    function greetings(){
+        console.log('hello');
+    }
+    // const function1 = function(){//anonymous function
+    //     console.log('hi');
+    // }
+    // greetings();
+    // function1()
+    // console.log(typeof function1)
+/*
+    setTimeout( function greeting() {
+        console.log('timeout');
+    }, 3000);
+    console.log('nextline');*/
+
+    let arr = ['learn javaScript','learn React','learn tailwindCSS']
+    arr.forEach(function(value , index){
+        console.log(value, index);
+    })
+
+    // function statement : the way of creating function is called function satement
+    function a(){
+        let i = 1;
+        console.log(i)
+    }
+    //function expression: function assigned to a variable is known as function expression
+    let b = function (){
+        console.log("b is called");
+    }
+
+    // difference between them is hoisting(which means calling before the creation )
+
+    //difference between the parameters and arguments is variables passed at the time of creation are known as parameters and the variables passed as the inputs at the time of calling are known as arguments.
+
+    let radius = [3,7,9,5];
+
+    function circle(radius ,logic){
+        let result = [];
+        for(let i =0;i<radius.length;i++){
+            result.push(logic(radius[i]));
+            console.log(radius[i])
+        }
+        console.log(result)
+    }
+
+    function area(radius){
+        return Math.PI * radius*radius;
+    }
+    
+    circle(radius, area);
+    console.log(radius.map(area))
     </script>
 </body>
 </html>

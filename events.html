@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="js-btn" onkeydown="enter">click</button>
+    <div class="container">
+        <div class="parentContainer">
+            <div class="childContainer">
+                click me
+            </div>
+        </div>
+    </div>
+    <script>
+        const button = document.querySelector('.js-btn')
+        button.addEventListener('keydown', () => {
+            if(onkeydown ==="Enter"){
+                alert('you pressed enter')
+            }
+        })
+        button.addEventListener('keydown', (e) => {
+            console.log(e ,'event')
+            console.log(e.key)
+        })
+        document.querySelector('.childContainer').addEventListener('click', (e) => {
+            alert('child was clicked')
+        })
+        document.querySelector('.parentContainer').addEventListener('click', (e) => {
+            e.stopPropagation();//not allow event to go further
+            alert('parent was clicked')
+        })
+        document.querySelector('.container').addEventListener('click', (e) => {
+            alert('container was clicked')
+        })
+
+        
+    </script>
+</body>
+
+</html>

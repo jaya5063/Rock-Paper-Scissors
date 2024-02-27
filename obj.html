@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Objects</title>
 </head>
+
 <body>
     <script>
         // Objects Creation
         const details = {
-            name : 'jaya',
-            sno : 66 ,
-            place : 'TDP'
+            name: 'jaya',
+            sno: 66,
+            place: 'TDP'
         }
         console.log(details); //to display ttotal object
         console.log(details.name);//to diplay specific key
@@ -25,14 +27,14 @@
         console.log(details);
         console.log(details['name']);//[] has same use as dot but it is used where dot property doesn't work like when we operators in names
 
-        const product={
-            name : 'shirt',
-            size : 'XL',
-            rating:{// nested objects
-                stars : 4.7,
-                conunt : 76
+        const product = {
+            name: 'shirt',
+            size: 'XL',
+            rating: {// nested objects
+                stars: 4.7,
+                conunt: 76
             },
-            obj :function fun1(){
+            obj: function fun1() {
                 console.log('function inside object');
             }
         };
@@ -44,6 +46,23 @@
         // it has the simillar syntax like javascript but with less features
         // it not support single quotes and functions
         // it can be understandable by almost all languages
+
+        let obj = {
+            name: 'creation',
+            purpose: 'object',
+            nested : {
+                name : "nested"
+            }
+        }
+        console.log(obj.nested)
+        delete obj.nested //delete the item from object
+        console.log(obj.nested)
+        for (const key in obj) {
+           console.log(key,obj[key])
+        }
+
+        
     </script>
 </body>
+
 </html>

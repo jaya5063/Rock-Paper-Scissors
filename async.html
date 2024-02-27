@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script src="async.js"></script> -->
+    <script>
+        const prom = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("promise is resolved")
+            }, 5000);
+        })
+
+        promiseHandling();
+        async function promiseHandling() {
+            let p = await prom
+            console.log(p)
+            console.log("first statement");
+        }
+        
+        function data(){
+            prom.then((res) => {
+                console.log(res);
+            })
+            console.log("i'm not waiting")
+        }
+        data();
+    </script>
+</body>
+
+</html>
